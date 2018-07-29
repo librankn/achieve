@@ -1,0 +1,26 @@
+<%= form_with(model: @record, local: true, url: choose_new_or_edit ) do |form| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @record.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="record_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="record_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<br>
+<%= link_to "ブログ一覧画面にもどる", records_path %>
