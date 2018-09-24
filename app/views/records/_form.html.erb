@@ -19,8 +19,8 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "投稿する", :class => 'btn btn-default' %>
 <% end %>
 
 <br>
-<%= link_to "ブログ一覧画面にもどる", records_path %>
+<%= link_to "ブログ一覧画面にもどる", records_path, class: 'btn btn-default'  %>
