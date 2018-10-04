@@ -16,6 +16,7 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
+    @record.user_id = current_user.id
     if @record.save
       redirect_to records_path, notice: "ブログを作成しました！"
     else
@@ -25,6 +26,7 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id])
+    @favorite = current_user.favorites.find_by(record_id: @record.id)
   end
 
   def edit
@@ -47,6 +49,7 @@ class RecordsController < ApplicationController
 
   def confirm
     @record = Record.new(record_params)
+    @record.user_id = current_user.id
     render :new if @record.invalid?
   end
 

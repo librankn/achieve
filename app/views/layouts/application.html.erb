@@ -25,6 +25,7 @@
             <li><a href="/records">index</a></li>
             <li><a href="/records/new">new</a></li>
             <% if logged_in? %>
+              <li><%= link_to "Profile", user_path(current_user.id) %></li>
               <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
             <% else %>
               <li><%= link_to "Sign up", new_user_path %></li>
