@@ -18,6 +18,7 @@ class RecordsController < ApplicationController
     @record = Record.new(record_params)
     @record.user_id = current_user.id
     if @record.save
+      RecordMailer.contact_mail(@record).deliver
       redirect_to records_path, notice: "ブログを作成しました！"
     else
       render 'new'
