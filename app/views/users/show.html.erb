@@ -3,9 +3,10 @@
 <p>メールアドレス: <%= @user.email %></p>
 
   <% @favorites_records.each do |favorite_record| %>
-    <tr class="col-xs-12 col-md-6">
+    <tr>
       <td><%= favorite_record.title %></td>
       <td><%= favorite_record.content %></td>
+      <td><%= favorite_record.user_id %></td>
       <td><%= link_to '詳細を確認する', record_path(favorite_record.id) %></td>
     </tr>
   <% end %>

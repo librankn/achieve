@@ -26,6 +26,7 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id])
+    @user = @record.user
     @favorite = current_user.favorites.find_by(record_id: @record.id)
   end
 
