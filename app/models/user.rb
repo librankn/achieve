@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :record, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_records, through: :favorites,source: :record
-
+  mount_uploader :image, ImageUploader
 end

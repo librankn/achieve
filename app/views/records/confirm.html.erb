@@ -6,11 +6,14 @@
 
   <p>タイトル:<%= @record.title %></p>
   <p>本文:<%= @record.content %></p>
+  <p>イメージ<%= image_tag(@record.image.url) %></p>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit  " 投稿する", :class => 'btn btn-warning'%>
 <% end %>
 
 <%= form_with(model: @record, url: new_record_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit "もどる", name: 'back' ,class: 'btn btn-default' %>
 <% end %>

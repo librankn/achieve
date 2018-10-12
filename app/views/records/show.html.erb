@@ -2,6 +2,10 @@
 <p>タイトル: <%= @record.title %></p>
 <p>内容: <%= @record.content %></p>
 <p>投稿者: <%= @user.name %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @record.image.url %>
+</p>
 
 <% unless @record.user_id == current_user.id %>
   <% if @favorite.present? %>

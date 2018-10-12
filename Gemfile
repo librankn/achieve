@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'bcrypt', '3.1.11'
+gem 'faker'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
