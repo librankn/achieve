@@ -36,7 +36,7 @@ class RecordsController < ApplicationController
   end
 
   def update
-        @record = Record.find(params[:id])
+    @record = Record.find(params[:id])
     if @record.update(record_params)
       redirect_to records_path, notice: "ブログを編集しました！"
     else

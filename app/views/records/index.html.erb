@@ -3,13 +3,10 @@
 <%= link_to '新しくブログを投稿する', new_record_path , class: 'btn btn-default'  %>
 
 <div class="container">
+  <p>タイトル 内容 投稿者</p>
+
 <table>
   <div class ="row">
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>投稿者</th>
-  </tr>
     <% @records.each do |record| %>
       <tr class="col-xs-12 col-md-6">
         <td width="50"><%= record.title %></td>

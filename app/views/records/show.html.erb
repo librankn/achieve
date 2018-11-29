@@ -4,7 +4,7 @@
 <p>投稿者: <%= @user.name %></p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @record.image.url %>
+  <%= image_tag if @record.image.url %>
 </p>
 
 <% unless @record.user_id == current_user.id %>
