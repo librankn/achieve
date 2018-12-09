@@ -6,7 +6,7 @@
 
   <p>タイトル:<%= @record.title %></p>
   <p>本文:<%= @record.content %></p>
-  <p>イメージ<%= image_tag(@record.image.url) %></p>
+  <p>画像<%= image_tag @record.image %></p>
   <%= form.hidden_field :image_cache %>
   <%= form.submit  " 投稿する", :class => 'btn btn-warning'%>
 <% end %>

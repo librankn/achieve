@@ -2,15 +2,19 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
-
+<p>ユーザー画像: <%= image_tag @user.image %></p>
 
 <p>お気に入り一覧</p>
   <% @favorites_records.each do |favorite_record| %>
+  <table>
     <tr>
       <td>タイトル:<%= favorite_record.title %></td>
       <td>内容:<%= favorite_record.content %></td>
       <td>投稿者:<%= favorite_record.user.name%>
       <td><%= link_to '詳細を確認する', record_path(favorite_record.id) %></td>
     </tr>
+    <table>
   <% end %>
+<br>
+<p><%= link_to '投稿一覧へ', records_path, class: 'actions' %></p>
 

@@ -2,11 +2,7 @@
 <p>タイトル: <%= @record.title %></p>
 <p>内容: <%= @record.content %></p>
 <p>投稿者: <%= @user.name %></p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @record.image.url %>
-</p>
-
+<p>画像: <%= image_tag @record.image %></p>
 <% unless @record.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
@@ -14,3 +10,6 @@
     <%= link_to 'お気に入りする', favorites_path(record_id: @record.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+<br>
+<br>
+<%= link_to ' 投稿一覧へ', records_path , class: 'btn btn-info'%>
