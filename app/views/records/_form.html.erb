@@ -23,10 +23,10 @@
   <div class="image">
     <%= form.label :image %>
     <%= image_tag(@record.image.url) if @record.image.url %>
-    <%= form.file_field :image, :class => 'file' %>
+    <%= form.file_field :image, class: 'file' %>
   </div>
 
-  <%= form.submit "投稿する", :class => 'btn btn-default' %>
+  <%= form.submit "投稿する", class: 'btn btn-default' %>
 <% end %>
 
 <br>
