@@ -2,6 +2,8 @@ class RecordsController < ApplicationController
   include SessionsHelper
   before_action :check_login
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user,only: [:edit, :update, :destroy]
+
   def index
     @records = Record.all
   end
@@ -70,4 +72,13 @@ class RecordsController < ApplicationController
       redirect_to new_session_path
     end
   end
+
+  def ensure_correct_user
+    @record = Record.find_by(id:params[:id])
+    if @record.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to(records_path)
+    end
+  end
+
 end
